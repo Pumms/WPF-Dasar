@@ -39,7 +39,7 @@
                     <TextBox x:Name="txb_price_item" HorizontalAlignment="Left" Height="23" Margin="94,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                     <Label Content="Stock" HorizontalAlignment="Left" Margin="268,7,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="txb_stock_item" HorizontalAlignment="Left" Height="23" Margin="328,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <DataGrid x:Name="tblitems" Height="116" Margin="133,161,114,0" VerticalAlignment="Top" SelectionChanged="tblitems_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid x:Name="tblitems" Height="116" Margin="88,161,64,0" VerticalAlignment="Top" SelectionChanged="tblitems_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
@@ -48,9 +48,9 @@
                             <DataGridTextColumn Header="Supplier" Binding="{Binding Supplier.Name}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button x:Name="btninsertitem" Content="Insert" HorizontalAlignment="Left" Margin="131,108,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="btninsertitem_Click"/>
-                    <Button x:Name="btnupdateitem" Content="Update" HorizontalAlignment="Left" Margin="225,108,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="btnupdateitem_Click"/>
-                    <Button x:Name="btndeleteitem" Content="Delete" Margin="322,107,109,0" VerticalAlignment="Top" Height="28"/>
+                    <Button x:Name="btninsertitem" Content="Insert" HorizontalAlignment="Left" Margin="125,108,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="btninsertitem_Click"/>
+                    <Button x:Name="btnupdateitem" Content="Update" HorizontalAlignment="Left" Margin="219,108,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="btnupdateitem_Click"/>
+                    <Button x:Name="btndeleteitem" Content="Delete" Margin="316,107,115,0" VerticalAlignment="Top" Height="28" Click="btndeleteitem_Click"/>
                     <ComboBox x:Name="cb_supplier" HorizontalAlignment="Left" ItemsSource="{Binding Suppliers}" Margin="328,46,0,0" SelectedValuePath="Id" DisplayMemberPath="Name" VerticalAlignment="Top" Width="120" SelectionChanged="cbsupplier_SelectionChanged"/>
                     <Label Content="Supplier" HorizontalAlignment="Left" Margin="268,43,0,0" VerticalAlignment="Top"/>
                 </Grid>

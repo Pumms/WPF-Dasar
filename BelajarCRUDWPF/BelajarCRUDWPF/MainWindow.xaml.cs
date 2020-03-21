@@ -116,7 +116,7 @@ namespace BelajarCRUDWPF
             }
             else
             {
-                
+                //do nothing
             }
         }
 
@@ -219,6 +219,27 @@ namespace BelajarCRUDWPF
                 MessageBox.Show("Succes Update Data!");
 
                 empty_txb_item();
+            }
+        }
+
+        private void btndeleteitem_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure delete this data?",
+               "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                int id = Convert.ToInt32(txb_id_item.Text);
+                var myid = con.Items.Where(s => s.Id == id).FirstOrDefault(); // menginisiasi table supplier menjadi S
+
+                con.Items.Remove(myid);
+                con.SaveChanges();
+                tblitems.ItemsSource = con.Items.ToList();
+                MessageBox.Show("Succes Delete Data!");
+
+                empty_txb_supp();
+            }
+            else
+            {
+                //do nothing
             }
         }
 
