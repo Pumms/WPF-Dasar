@@ -5,8 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BelajarCRUDWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Supplier" Height="350" Width="525" Closing="OnClosing" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+
+        <TabControl HorizontalAlignment="Left" Height="313" Margin="5,5,0,0" VerticalAlignment="Top" Width="512">
+            <TabItem Header="Supplier">
+                <Grid Name="containersupplier"  Background="#FFE5E5E5">
+                    <Label Content="Id" HorizontalAlignment="Left" Margin="132,19,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Name" HorizontalAlignment="Left" Margin="132,46,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Address" HorizontalAlignment="Left" Margin="132,77,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txb_id_supp" HorizontalAlignment="Left" Height="23" Margin="215,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox x:Name="txb_name_supp" HorizontalAlignment="Left" Height="23" Margin="215,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
+                    <TextBox x:Name="txb_address_supp" HorizontalAlignment="Left" Height="23" Margin="215,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
+                    <DataGrid x:Name="tblsupplier" Height="116" Margin="133,161,114,0" VerticalAlignment="Top" SelectionChanged="tblsupplier_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Address" Binding="{Binding Address}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="btninsert" Content="Insert" HorizontalAlignment="Left" Margin="134,125,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="btninsert_Click"/>
+                    <Button x:Name="btnupdate" Content="Update" HorizontalAlignment="Left" Margin="223,125,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="btnupdate_Click"/>
+                    <Button x:Name="btndelete" Content="Delete" HorizontalAlignment="Left" Margin="315,125,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="btndelete_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Items">
+                <Grid Name="containeritem" Background="#FFE5E5E5">
+                    <Label Content="Id" HorizontalAlignment="Left" Margin="34,7,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txb_id_item" HorizontalAlignment="Left" Height="23" Margin="94,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" IsEnabled="False"/>
+                    <Label Content="Name" HorizontalAlignment="Left" Margin="33,38,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txb_name_item" HorizontalAlignment="Left" Height="23" Margin="94,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Price" HorizontalAlignment="Left" Margin="34,69,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txb_price_item" HorizontalAlignment="Left" Height="23" Margin="94,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Stock" HorizontalAlignment="Left" Margin="268,7,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txb_stock_item" HorizontalAlignment="Left" Height="23" Margin="328,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <DataGrid x:Name="tblitems" Height="116" Margin="133,161,114,0" VerticalAlignment="Top" SelectionChanged="tblitems_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Price" Binding="{Binding Price}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Stock" Binding="{Binding Stock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Supplier" Binding="{Binding Supplier.Name}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="btninsertitem" Content="Insert" HorizontalAlignment="Left" Margin="131,108,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="btninsertitem_Click"/>
+                    <Button x:Name="btnupdateitem" Content="Update" HorizontalAlignment="Left" Margin="225,108,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="btnupdateitem_Click"/>
+                    <Button x:Name="btndeleteitem" Content="Delete" Margin="322,107,109,0" VerticalAlignment="Top" Height="28"/>
+                    <ComboBox x:Name="cb_supplier" HorizontalAlignment="Left" ItemsSource="{Binding Suppliers}" Margin="328,46,0,0" SelectedValuePath="Id" DisplayMemberPath="Name" VerticalAlignment="Top" Width="120" SelectionChanged="cbsupplier_SelectionChanged"/>
+                    <Label Content="Supplier" HorizontalAlignment="Left" Margin="268,43,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

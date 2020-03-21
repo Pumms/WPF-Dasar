@@ -16,10 +16,7 @@ namespace BelajarCRUDWPF.Model
         public string Name { get; set; }
         public string Address { get; set; }
 
-        public Supplier ()
-        {
-
-        }
+        public Supplier () { }
 
         public Supplier(String name, String address)
         {

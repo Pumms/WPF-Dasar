@@ -12,8 +12,9 @@ D:\Projek Visual Studio\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUD
 D:\Projek Visual Studio\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\obj\Debug\BelajarCRUDWPF_MarkupCompile.lref
 D:\Projek Visual Studio\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\obj\Debug\MainWindow.baml
 D:\Projek Visual Studio\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\obj\Debug\BelajarCRUDWPF.g.resources
+D:\Projek Visual Studio\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\obj\Debug\BelajarCRUDWPF.Migrations.addsuppliermodel.resources
 D:\Projek Visual Studio\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\obj\Debug\BelajarCRUDWPF.Properties.Resources.resources
 D:\Projek Visual Studio\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\obj\Debug\BelajarCRUDWPF.csproj.GenerateResource.Cache
 D:\Projek Visual Studio\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\obj\Debug\BelajarCRUDWPF.exe
 D:\Projek Visual Studio\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\obj\Debug\BelajarCRUDWPF.pdb
-D:\Projek Visual Studio\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\obj\Debug\BelajarCRUDWPF.Migrations.addsuppliermodel.resources
+D:\Projek Visual Studio\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\BelajarCRUDWPF\obj\Debug\BelajarCRUDWPF.Migrations.additemmodel.resources

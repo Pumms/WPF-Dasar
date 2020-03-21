@@ -82,9 +82,14 @@
     <Compile Include="Migrations\202003190728183_addsuppliermodel.designer.cs">
       <DependentUpon>202003190728183_addsuppliermodel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003200849058_additemmodel.cs" />
+    <Compile Include="Migrations\202003200849058_additemmodel.Designer.cs">
+      <DependentUpon>202003200849058_additemmodel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Item.cs" />
     <Compile Include="Model\Supplier.cs" />
-    <Compile Include="MyContext\MyContext.cs" />
+    <Compile Include="MyContext\myContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -101,6 +106,9 @@
     <EmbeddedResource Include="Migrations\202003190728183_addsuppliermodel.resx">
       <DependentUpon>202003190728183_addsuppliermodel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003200849058_additemmodel.resx">
+      <DependentUpon>202003200849058_additemmodel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -114,6 +122,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

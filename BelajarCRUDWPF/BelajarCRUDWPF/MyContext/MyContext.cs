@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace BelajarCRUDWPF.MyContext
 {
-    public class MyContext : DbContext
+    public class myContext : DbContext
     {
-        public MyContext(): base("BelajarCRUDWPF") {  }
+        public myContext(): base("BelajarCRUDWPF") {  }
         public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Item> Items { get; set; }
     }
 }
