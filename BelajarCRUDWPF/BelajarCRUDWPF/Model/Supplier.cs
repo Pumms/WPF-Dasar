@@ -11,17 +11,26 @@ namespace BelajarCRUDWPF.Model
     [Table("TB_M_Supplier")] //Memberi Custom nama Tabel
     public class Supplier
     {
-        [Key] //Membuat baris bawah menjadi Primary Key
-        public int Id {get; set;}
+        [Key]
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Ket_Role { get; set; }
+        public Role Role { get; set; }
+        public Supplier()
+        {
 
-        public Supplier () { }
-
-        public Supplier(String name, String address)
+        }
+        public Supplier(string name, string address, string email, string password, string ket_role, Role role)
         {
             this.Name = name;
             this.Address = address;
+            this.Email = email;
+            this.Password = password;
+            this.Ket_Role = ket_role;
+            this.Role = role;
         }
     }
 }

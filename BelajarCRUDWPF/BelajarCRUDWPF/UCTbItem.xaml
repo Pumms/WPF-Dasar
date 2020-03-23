@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="BelajarCRUDWPF.UCTbItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:BelajarCRUDWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="530" d:DesignWidth="600" Foreground="Black">
+    <Grid x:Name="container_item" Background="LightGray">
+        <Label Content="Id" HorizontalAlignment="Left" Margin="34,33,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txb_id_item" HorizontalAlignment="Left" Height="23" Margin="92,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" IsEnabled="False"/>
+
+        <Label Content="Name" HorizontalAlignment="Left" Margin="32,66,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txb_name_item" HorizontalAlignment="Left" Height="23" Margin="92,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
+
+        <Label Content="Price" HorizontalAlignment="Left" Margin="32,97,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txb_price_item" HorizontalAlignment="Left" Height="23" Margin="92,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
+
+        <Label Content="Stock" HorizontalAlignment="Left" Margin="319,33,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txb_stock_item" HorizontalAlignment="Left" Height="23" Margin="376,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
+
+        <Label Content="Supplier" HorizontalAlignment="Left" Margin="319,73,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ComboBox x:Name="cb_supplier" HorizontalAlignment="Left" ItemsSource="{Binding Suppliers}" Margin="380,66,0,0" SelectedValuePath="Id" DisplayMemberPath="Name" VerticalAlignment="Top" Width="183" SelectionChanged="cbsupplier_SelectionChanged"/>
+
+        <Button x:Name="btninsertitem" Content="Insert" HorizontalAlignment="Left" Margin="289,179,0,0" VerticalAlignment="Top" Width="85" Height="30" Click="btninsertitem_Click" Background="#FF444444" BorderBrush="{x:Null}"/>
+        <Button x:Name="btnupdateitem" Content="Update" HorizontalAlignment="Left" Margin="392,179,0,0" VerticalAlignment="Top" Width="85" Height="30" Click="btnupdateitem_Click" Background="#FF444444" BorderBrush="{x:Null}"/>
+        <Button x:Name="btndeleteitem" Content="Delete" Margin="493,179,22,0" VerticalAlignment="Top" Width="85" Height="30" Click="btndeleteitem_Click" Background="#FF444444" BorderBrush="{x:Null}"/>
+
+        <DataGrid x:Name="tblitems" Height="249" Margin="34,226,22,0" VerticalAlignment="Top" SelectionChanged="tblitems_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="Stock" Binding="{Binding Stock}"/>
+                <DataGridTextColumn Header="Supplier" Binding="{Binding Supplier.Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="Refresh_Btn" Content="Refresh" Margin="20,179,495,0" VerticalAlignment="Top" Width="85" Height="30" Click="refresh_Btn_Click" Background="#FF444444" BorderBrush="{x:Null}"/>
+
+    </Grid>
+</UserControl>

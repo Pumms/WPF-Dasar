@@ -16,9 +16,7 @@ namespace BelajarCRUDWPF.Model
         public string Name { get; set; }
         public int Price { get; set; }
         public int Stock { get; set; }
-        //Otomatis membuat FK
-        public Supplier Supplier {get; set;}
-
+        public Supplier Supplier { get; set; }
         public Item() { }
 
         public Item(string name, int price, int stock, Supplier Supplier)
@@ -27,7 +25,6 @@ namespace BelajarCRUDWPF.Model
             this.Price = price;
             this.Stock = stock;
             this.Supplier = Supplier;
-
         }
     }
 }

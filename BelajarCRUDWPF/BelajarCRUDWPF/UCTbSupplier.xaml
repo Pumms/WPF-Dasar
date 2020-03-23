@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="BelajarCRUDWPF.UCTbSupplier"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:BelajarCRUDWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="530" d:DesignWidth="600" Foreground="Black">
+
+    <Grid x:Name="container_supplier" Background="LightGray">
+        <Label Content="Id" HorizontalAlignment="Left" Margin="38,24,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="38,51,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Address" HorizontalAlignment="Left" Margin="38,82,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="302,24,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Role" HorizontalAlignment="Left" Margin="302,60,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+
+        <TextBox x:Name="txb_id_supp" HorizontalAlignment="Left" Height="23" Margin="121,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+        <TextBox x:Name="txb_name_supp" TabIndex="1" HorizontalAlignment="Left" Height="23" Margin="121,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
+        <TextBox x:Name="txb_address_supp" TabIndex="2" HorizontalAlignment="Left" Height="56" Margin="121,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
+        <TextBox x:Name="txb_email_supp" TabIndex="3" HorizontalAlignment="Left" Height="23" Margin="372,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218"/>
+        <ComboBox x:Name="cb_role" TabIndex="4" HorizontalAlignment="Left" ItemsSource="{Binding Roles}" SelectedValuePath="Id" DisplayMemberPath="Name" Margin="372,51,0,0" VerticalAlignment="Top" Width="115" SelectionChanged="cb_role_SelectionChanged"/>
+
+        <Button x:Name="btninsertsupp" Background="#FF444444" Content="Insert" HorizontalAlignment="Left" Margin="290,189,0,0" VerticalAlignment="Top" Width="85" Height="30" Click="btninsertsupp_Click" BorderBrush="{x:Null}"/>
+        <Button x:Name="btnupdatesupp" Background="#FF444444" Content="Update" HorizontalAlignment="Left" Margin="385,189,0,0" VerticalAlignment="Top" Width="85" Height="30" Click="btnupdatesupp_Click" BorderBrush="{x:Null}"/>
+        <Button x:Name="btndeletesupp" Background="#FF444444" Content="Delete" HorizontalAlignment="Left" Margin="482,189,0,0" VerticalAlignment="Top" Width="85" Height="30" Click="btndeletesupp_Click" BorderBrush="{x:Null}"/>
+        <DataGrid x:Name="tblsupplier" TabIndex="3" Height="229" Margin="28,235,33,0" VerticalAlignment="Top" SelectionChanged="tblsupplier_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Role" Binding="{Binding Role.Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="refreshBtn" Background="#FF444444" Content="Refresh" HorizontalAlignment="Left" Margin="28,189,0,0" VerticalAlignment="Top" Width="85" Height="30" Click="refreshBtn_Click" BorderBrush="{x:Null}"/>
+    </Grid>
+</UserControl>
