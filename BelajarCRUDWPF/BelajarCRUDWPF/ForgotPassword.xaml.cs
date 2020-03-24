@@ -77,9 +77,12 @@ namespace BelajarCRUDWPF
         {
             string to = EmailTujuan;
             string from = "web.tester1998@gmail.com";
+
             MailMessage message = new MailMessage(from, to);
-            message.Subject = "Registration";
-            string isipesan = "Hi " + name + " ," +
+            string date = DateTime.Now.ToString("MM/dd/yyyy");
+
+            message.Subject = "Password for Login " + date;
+            string isipesan = "Hi " + name + " ,<br>" +
                 "This your password : " + password +
                 "<br>Thank You";
             message.Body = isipesan;

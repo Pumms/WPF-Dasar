@@ -26,7 +26,9 @@ namespace BelajarCRUDWPF
         public Login()
         {
             InitializeComponent();
-            txb_email.Focus();
+            txb_password.Focus();
+
+            txb_email.Text = "aslam@gmail.com";
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
@@ -71,7 +73,7 @@ namespace BelajarCRUDWPF
             }
         }
 
-        public void BtnLogin_Click(object sender, RoutedEventArgs e)
+        private void LoginUser()
         {
             if (txb_email.Text == "")
             {
@@ -107,6 +109,25 @@ namespace BelajarCRUDWPF
             ForgotPassword fp = new ForgotPassword();
             fp.Show();
             this.Close();
+        }
+
+        public void BtnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            LoginUser();
+        }
+
+        private void txb_password_TouchEnter(object sender, TouchEventArgs e)
+        {
+            LoginUser();
+        }
+
+        private void txb_email_TouchEnter(object sender, TouchEventArgs e)
+        {
+            LoginUser();
+        }
+
+        private void txb_password_KeyDown(object sender, KeyEventArgs e)
+        {
         }
     }
 }

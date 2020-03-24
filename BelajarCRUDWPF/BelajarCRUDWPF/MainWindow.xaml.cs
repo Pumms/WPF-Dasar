@@ -31,9 +31,11 @@ namespace BelajarCRUDWPF
             Mail = Remail;
             Role_Access();
         }
+
         private void Role_Access()
         {
             var role_akses = con.Suppliers.Where(S => S.Email == Mail).FirstOrDefault();
+
             if (role_akses.Ket_Role == "Admin")
             {
                 //do nothing
@@ -46,7 +48,6 @@ namespace BelajarCRUDWPF
 
         private void ButtonPopUpLogout_Click(object sender, RoutedEventArgs e)
         {
-
             if (MessageBox.Show("Are you sure? \nYou will be Logout",
               "Confirmation Logout", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {

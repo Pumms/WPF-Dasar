@@ -8,35 +8,49 @@
              mc:Ignorable="d" 
              d:DesignHeight="530" d:DesignWidth="600" Foreground="Black">
     <Grid x:Name="container_item" Background="LightGray">
-        <Label Content="Id" HorizontalAlignment="Left" Margin="34,33,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Id" HorizontalAlignment="Left" Margin="27,33,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBox x:Name="txb_id_item" HorizontalAlignment="Left" Height="23" Margin="92,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" IsEnabled="False"/>
 
-        <Label Content="Name" HorizontalAlignment="Left" Margin="32,66,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="27,66,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBox x:Name="txb_name_item" HorizontalAlignment="Left" Height="23" Margin="92,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
 
-        <Label Content="Price" HorizontalAlignment="Left" Margin="32,97,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Price" HorizontalAlignment="Left" Margin="27,97,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBox x:Name="txb_price_item" HorizontalAlignment="Left" Height="23" Margin="92,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
 
-        <Label Content="Stock" HorizontalAlignment="Left" Margin="319,33,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBox x:Name="txb_stock_item" HorizontalAlignment="Left" Height="23" Margin="376,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
+        <Label Content="Stock" HorizontalAlignment="Left" Margin="309,33,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txb_stock_item" HorizontalAlignment="Left" Height="23" Margin="381,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
 
-        <Label Content="Supplier" HorizontalAlignment="Left" Margin="319,73,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <ComboBox x:Name="cb_supplier" HorizontalAlignment="Left" ItemsSource="{Binding Suppliers}" Margin="380,66,0,0" SelectedValuePath="Id" DisplayMemberPath="Name" VerticalAlignment="Top" Width="183" SelectionChanged="cbsupplier_SelectionChanged"/>
+        <Label Content="Supplier" HorizontalAlignment="Left" Margin="309,66,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ComboBox x:Name="cb_supplier" HorizontalAlignment="Left" ItemsSource="{Binding Suppliers}" Margin="381,55,0,0" SelectedValuePath="Id" DisplayMemberPath="Name" VerticalAlignment="Top" Width="183" SelectionChanged="cbsupplier_SelectionChanged"/>
 
-        <Button x:Name="btninsertitem" Content="Insert" HorizontalAlignment="Left" Margin="289,179,0,0" VerticalAlignment="Top" Width="85" Height="30" Click="btninsertitem_Click" Background="#FF444444" BorderBrush="{x:Null}"/>
-        <Button x:Name="btnupdateitem" Content="Update" HorizontalAlignment="Left" Margin="392,179,0,0" VerticalAlignment="Top" Width="85" Height="30" Click="btnupdateitem_Click" Background="#FF444444" BorderBrush="{x:Null}"/>
-        <Button x:Name="btndeleteitem" Content="Delete" Margin="493,179,22,0" VerticalAlignment="Top" Width="85" Height="30" Click="btndeleteitem_Click" Background="#FF444444" BorderBrush="{x:Null}"/>
+        <Button x:Name="Btn_Save" Content="Save" HorizontalAlignment="Left" Margin="453,142,0,0" VerticalAlignment="Top" Width="110" Height="35" Click="BtnSave_Click" BorderBrush="{x:Null}"/>
 
-        <DataGrid x:Name="tblitems" Height="249" Margin="34,226,22,0" VerticalAlignment="Top" SelectionChanged="tblitems_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True">
+        <Button Margin="196,210,345,288" Click="Search_Btn">
+            <TextBlock>
+            <materialDesign:PackIcon Kind="Search" Height="25" Width="25"/>
+            </TextBlock>
+        </Button>
+        <TextBox x:Name="Search_box" HorizontalAlignment="Left" Height="27" Margin="29,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
+        <DataGrid x:Name="tblitems" Height="250" Margin="28,251,33,0" VerticalAlignment="Top" SelectionChanged="tblitems_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="Price" Binding="{Binding Price}"/>
                 <DataGridTextColumn Header="Stock" Binding="{Binding Stock}"/>
                 <DataGridTextColumn Header="Supplier" Binding="{Binding Supplier.Name}"/>
+                <DataGridTemplateColumn Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Background="red" Click="HapusRow">
+                                <materialDesign:PackIcon Kind="Trash"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="Refresh_Btn" Content="Refresh" Margin="20,179,495,0" VerticalAlignment="Top" Width="85" Height="30" Click="refresh_Btn_Click" Background="#FF444444" BorderBrush="{x:Null}"/>
+        <Button x:Name="Refresh_Btn" Content="Refresh" Margin="479,213,36,0" VerticalAlignment="Top" Width="85" Height="30" Click="refresh_Btn_Click" BorderBrush="{x:Null}"/>
 
     </Grid>
 </UserControl>

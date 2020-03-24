@@ -11,14 +11,14 @@
         <Label Content="LOGIN" HorizontalAlignment="Left" Margin="149,44,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
 
 
-        <Button x:Name="BtnLogin" Background="#FF444444" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="250" Margin="72,0,68,62" Height="42" Click="BtnLogin_Click" BorderBrush="{x:Null}"/>
+        <Button x:Name="BtnLogin" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="250" Margin="72,0,68,62" Height="42" Click="BtnLogin_Click" BorderBrush="{x:Null}"/>
         <Button Content="Forgot Password ?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="148" Margin="174,0,68,129" Background="{x:Null}" Foreground="#DD000000" BorderBrush="{x:Null}" Height="27" Click="BtnForgot_Click"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="68,124,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txb_email" HorizontalAlignment="Left" Height="23" Margin="72,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
+        <TextBox x:Name="txb_email" HorizontalAlignment="Left" Height="23" Margin="72,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" TouchEnter="txb_email_TouchEnter"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="68,202,0,0" VerticalAlignment="Top"/>
-        <PasswordBox x:Name="txb_password" HorizontalAlignment="Left" Height="23" Margin="72,226,0,0" VerticalAlignment="Top" Width="250" AutomationProperties.HelpText="Enter your Password"/>
+        <PasswordBox x:Name="txb_password" HorizontalAlignment="Left" Height="23" Margin="72,226,0,0" VerticalAlignment="Top" Width="250" AutomationProperties.HelpText="Enter your Password" TouchEnter="txb_password_TouchEnter" KeyDown="txb_password_KeyDown"/>
 
-        <materialDesign:PackIcon Kind="Close" Width="25" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,6,8,0" MouseLeftButtonDown="Exit_Btn" Cursor="Hand"/>
+        <materialDesign:PackIcon Kind="CloseCircle" Width="25" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,6,8,0" MouseLeftButtonDown="Exit_Btn" Cursor="Hand"/>
 
 
     </Grid>
