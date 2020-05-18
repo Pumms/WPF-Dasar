@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="BelajarCRUDWPF.UCTbItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:BelajarCRUDWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="530" d:DesignWidth="600" Foreground="Black">
+    <Grid x:Name="container_item" Background="LightGray">
+        <Label Content="Id" HorizontalAlignment="Left" Margin="27,33,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txb_id_item" HorizontalAlignment="Left" Height="23" Margin="92,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" IsEnabled="False"/>
+
+        <Label Content="Name" HorizontalAlignment="Left" Margin="27,66,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txb_name_item" HorizontalAlignment="Left" Height="23" Margin="92,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
+
+        <Label Content="Price" HorizontalAlignment="Left" Margin="27,97,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txb_price_item" HorizontalAlignment="Left" Height="23" Margin="92,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
+
+        <Label Content="Stock" HorizontalAlignment="Left" Margin="309,33,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txb_stock_item" HorizontalAlignment="Left" Height="23" Margin="381,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
+
+        <Label Content="Supplier" HorizontalAlignment="Left" Margin="309,66,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ComboBox x:Name="cb_supplier" HorizontalAlignment="Left" ItemsSource="{Binding Suppliers}" Margin="381,55,0,0" SelectedValuePath="Id" DisplayMemberPath="Name" VerticalAlignment="Top" Width="183" SelectionChanged="cbsupplier_SelectionChanged"/>
+
+        <Button x:Name="Btn_Save" Content="Save" HorizontalAlignment="Left" Margin="453,142,0,0" VerticalAlignment="Top" Width="110" Height="35" Click="BtnSave_Click" BorderBrush="{x:Null}"/>
+
+        <Button Margin="196,210,345,288" Click="Search_Btn" ToolTip="Search">
+            <TextBlock>
+            <materialDesign:PackIcon Kind="Search" Height="25" Width="25"/>
+            </TextBlock>
+        </Button>
+        <TextBox x:Name="Search_box" HorizontalAlignment="Left" Height="27" Margin="29,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
+        <DataGrid x:Name="tblitems" Height="250" Margin="28,251,33,0" VerticalAlignment="Top" SelectionChanged="tblitems_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="Stock" Binding="{Binding Stock}"/>
+                <DataGridTextColumn Header="Supplier" Binding="{Binding Supplier.Name}"/>
+                <DataGridTemplateColumn Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Background="red" Click="HapusRow">
+                                <materialDesign:PackIcon Kind="Trash"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="Refresh_Btn" Content="Refresh" Margin="487,213,28,0" VerticalAlignment="Top" Width="85" Height="30" Click="refresh_Btn_Click" BorderBrush="{x:Null}"/>
+
+    </Grid>
+</UserControl>
